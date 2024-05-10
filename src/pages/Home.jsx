@@ -1,9 +1,12 @@
+import CarouSel from "../component/CarouSel";
+import HotelLocation from "../component/HotelLocation";
 
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home</h1>
+            <CarouSel></CarouSel>
+            <HotelLocation></HotelLocation>
         </div>
     );
 };
