@@ -1,5 +1,8 @@
 import CarouSel from "../component/CarouSel";
+import FeaturedRooms from "../component/FeaturedRooms";
 import HotelLocation from "../component/HotelLocation";
+import Newsletter from "../component/Newsletter";
+
 
 
 const Home = () => {
@@ -7,6 +10,8 @@ const Home = () => {
         <div>
             <CarouSel></CarouSel>
             <HotelLocation></HotelLocation>
+            <Newsletter></Newsletter>
+            <FeaturedRooms></FeaturedRooms>
         </div>
     );
 };
