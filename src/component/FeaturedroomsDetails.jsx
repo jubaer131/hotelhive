@@ -128,6 +128,12 @@ const FeaturedroomsDetails = ({ room }) => {
         closeModal();
     };
 
+    const handlesave = e => {
+        console.log('i anm trying hard ')
+        const form = e.target.value
+        const RoomDescription = form.RoomDescription.value
+    }
+
     return (
         <div className="p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
             <div className="space-y-4">
@@ -152,11 +158,61 @@ const FeaturedroomsDetails = ({ room }) => {
                         <div className="text-center">
                             <h3 className="text-xl font-bold mb-4">Room Summary</h3>
                             <p className="mb-4">{room.RoomDescription}</p>
-                            <p className="mb-4">Price: {room.Price}</p>
+                            <form onSubmit={handlesave}>
+                                <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
+                                    <div>
+                                        <label className='text-gray-700 ' htmlFor='RoomDescription'>
 
-                            <button onClick={() => handleBooked(room._id, room.Status, 'booked')} className="px-4 py-2 mt-4 font-semibold text-white bg-blue-600 rounded hover:bg-blue-500">
-                                Confirm Booking
-                            </button>
+                                            RoomDescription
+                                        </label>
+                                        <input
+                                            id='RoomDescription'
+                                            name='RoomDescription'
+                                            type='text'
+                                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label className='text-gray-700 ' htmlFor='emailAddress'>
+                                            Email Address
+                                        </label>
+                                        <input
+                                            id='emailAddress'
+                                            type='email'
+                                            name='email'
+                                            disabled
+                                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                        />
+                                    </div>
+                                    <div className='flex flex-col gap-2 '>
+                                        <label className='text-gray-700'>Deadline</label>
+
+                                        {/* Date Picker Input Field */}
+                                    </div>
+
+
+                                    <div>
+                                        <label className='text-gray-700 ' htmlFor='min_price'>
+                                            Price
+                                        </label>
+                                        <input
+                                            id='min_price'
+                                            name='min_price'
+                                            type='number'
+                                            className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                        />
+                                    </div>
+
+
+                                </div>
+
+                                <button onClick={() => handleBooked(room._id, room.Status, 'booked')} className="px-4 py-2 mt-4 font-semibold text-white bg-blue-600 rounded hover:bg-blue-500">
+                                    Confirm Booking
+                                </button>
+                            </form>
+
+
                             <button onClick={closeModal} className="absolute top-0 right-0 mt-2 mr-2 text-gray-500 cursor-pointer">
                                 <span className="sr-only">Close</span>
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
