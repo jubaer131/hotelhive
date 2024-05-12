@@ -2,6 +2,7 @@ import CarouSel from "../component/CarouSel";
 import FeaturedRooms from "../component/FeaturedRooms";
 import HotelLocation from "../component/HotelLocation";
 import Newsletter from "../component/Newsletter";
+import Userreview from "../component/Userreview";
 
 
 
@@ -12,6 +13,7 @@ const Home = () => {
             <HotelLocation></HotelLocation>
             <Newsletter></Newsletter>
             <FeaturedRooms></FeaturedRooms>
+            <Userreview></Userreview>
         </div>
     );
 };

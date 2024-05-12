@@ -3,10 +3,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../assets/Provider/AuthProvider";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Review = () => {
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date())
+    const navigate = useNavigate()
 
 
     const handlereview = async (e) => {
@@ -24,6 +26,7 @@ const Review = () => {
         try {
             const { data } = await axios.post('http://localhost:5000/userreview', datareview);
             console.log(data);
+            navigate('/')
         } catch (err) {
             console.log(err);
         }
