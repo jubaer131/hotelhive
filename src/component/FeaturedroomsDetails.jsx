@@ -1,88 +1,13 @@
-// import axios from 'axios';
-// import { useState } from 'react';
-// import Swal from 'sweetalert2';
-
-// const FeaturedroomsDetails = ({ room }) => {
-
-
-//     const handlebooked = async (id, previousStatus, Status) => {
-//         console.log(id, previousStatus, Status)
-
-//         const { data } = await axios.patch(`http://localhost:5000/featured-rooms/${id}`, {
-//             Status
-//         })
-//         Swal.fire({
-//             position: "top-end",
-//             icon: "success",
-//             title: "You have booked",
-//             showConfirmButton: false,
-//             timer: 1500
-//         });
-
-
-
-
-
-
-//     }
-
-//     return (
-//         <div className=" p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
-
-//             <div className="space-y-4">
-//                 <div className="space-y-2">
-//                     <img src="https://source.unsplash.com/random/480x360/?4" alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
-
-//                 </div>
-//                 <div className="space-y-4">
-//                     <a rel="noopener noreferrer" href="#" className="block">
-//                         <h3 className="text-xl font-semibold dark:text-violet-600">Facere ipsa nulla corrupti praesentium pariatur architecto</h3>
-//                     </a>
-//                     <p className="leading-snug dark:text-gray-600">{room.RoomDescription.slice(0, 120)}...</p>
-//                     <button
-//                         onClick={() => handlebooked(room._id, room.Status, 'booked')}
-//                         disabled={room.Status !== 'available'}
-//                         type="button" className={`text-sm font-normal btn ${room.Status === 'available' && 'text-yellow-500 bg-yellow-100/60'}${room.Status === 'booked' && 'text-red-500 bg-red-100/60'}`}>Book now</button>
-
-
-
-
-//                     <button className='btn' onClick={() => document.getElementById('my_modal_5').showModal()}>open modal</button>
-//                     <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-//                         <div className="modal-box">
-//                             <h3 className="font-bold text-lg">Hello!</h3>
-//                             <p className="py-4">Press ESC key or click the button below to close</p>
-//                             <div className="modal-action">
-//                                 <form method="dialog">
-
-//                                     <button
-
-//                                         onClick={() => handlebooked(room._id, room.Status, 'booked')}
-
-//                                         className={`text-sm font-normal btn ${room.Status === 'available' && 'text-yellow-500 bg-yellow-100/60'}${room.Status === 'booked' && 'text-red-500 bg-red-100/60'}`}>Book now</button>
-//                                     <button  className='btn'>cencle</button>
-//                                 </form>
-//                             </div>
-//                         </div>
-//                     </dialog>
-
-
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default FeaturedroomsDetails;
-
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { AuthContext } from "../assets/Provider/AuthProvider";
 
 const FeaturedroomsDetails = ({ room }) => {
+    const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
     const [isBooked, setIsBooked] = useState(false); // State to track if room is booked
     const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
@@ -140,8 +65,9 @@ const FeaturedroomsDetails = ({ room }) => {
         const RoomDescription = room.RoomDescription;
         const price = room.PricePerNight;
         const date = startDate;
-
-        const roomdata = { RoomDescription, price, date };
+        const email = user.email
+        const name = user.displayName
+        const roomdata = { RoomDescription, price, date, email, name };
 
         try {
             const { data } = await axios.post('http://localhost:5000/myrooms-data', roomdata);
@@ -200,6 +126,7 @@ const FeaturedroomsDetails = ({ room }) => {
                                             Email Address
                                         </label>
                                         <input
+                                            defaultValue={user.displayName}
                                             id='emailAddress'
                                             type='email'
                                             name='email'
