@@ -163,7 +163,7 @@ const RoomPageDetail = () => {
 
 
                                 </div>
-                                <Link to="/">
+                                <Link to="/review">
                                     <button onClick={() => handleBooked(room._id, room.Status, 'booked')} className="px-4 p-2 mt-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-500">
                                         Confirm Booking
                                     </button>

@@ -8,6 +8,7 @@ import Login from "../../pages/Login";
 import Registration from "../../pages/Registration";
 import RoomsPage from "../../pages/RoomsPage";
 import RoomPageDetail from "../../pages/RoomPageDetail";
+import Review from "../../pages/Review";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/roompagedetail/${params.id}`)
 
             },
+            {
+                path: "/review",
+                element: <Review></Review>,
+            },
+
         ],
     },
 ]);
