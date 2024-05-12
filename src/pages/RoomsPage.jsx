@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 
 const RoomsPage = () => {
@@ -32,8 +33,8 @@ const RoomsPage = () => {
                             id='PricePerNight'
                             className='border p-4 rounded-lg'
                         >
-                            <option value=''>Filter By PricePerNight</option>
-                            <option value='$50'>Price $50</option>
+                            <option value=''>Filter By  price range</option>
+                            <option value='$50'>Price for Pernight $50</option>
                             <option value='$20'>Price $20</option>
                             <option value='$80'>Price $80</option>
 
@@ -46,27 +47,41 @@ const RoomsPage = () => {
                 </div>
                 <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
                     {rooms.map(room => (
-                        <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
 
-                            <div className="space-y-4">
-                                <div className="space-y-2">
-                                    <img src="https://source.unsplash.com/random/480x360/?4" alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
-                                    <div className="flex items-center text-xs gap-6">
-                                        <span>PricePerNight : {room.PricePerNight}</span>
-                                        <span>RoomSize :{room.RoomSize}</span>
-                                        <span>Availability :{room.Status}</span>
+                        <Link to="/card1">
+
+                            <div className="hero  shadow-2xl" style={{ backgroundImage: 'url(https://i.ibb.co/QrjvjQC/manzur-alam-jxz7-Fe1btc-unsplash.jpg)' }}>
+                                <div className=""></div>
+                                <div className="hero-content text-center text-neutral-content">
+                                    <div className="max-w-md h-72">
+                                        <h1 className="mt-28 text-4xl font-bold">Bangladesh</h1>
 
                                     </div>
                                 </div>
-                                <div className="space-y-2">
-                                    <p className="leading-snug dark:text-gray-600">SpecialOffers :{room.SpecialOffers}</p>
-                                    <a rel="noopener noreferrer" href="#" className="block">
-                                        <h3 className="text-[16px] font-semibold dark:text-violet-600">{room.RoomDescription.slice(0, 130)}...</h3>
-                                    </a>
 
-                                </div>
                             </div>
-                        </div>
+                        </Link>
+                        // <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
+
+                        //     <div className="space-y-4">
+                        //         <div className="space-y-2">
+                        //             <img src="https://source.unsplash.com/random/480x360/?4" alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                        //             <div className="flex items-center text-xs gap-6">
+                        //                 <span>PricePerNight : {room.PricePerNight}</span>
+                        //                 <span>RoomSize :{room.RoomSize}</span>
+                        //                 <span>Availability :{room.Status}</span>
+
+                        //             </div>
+                        //         </div>
+                        //         <div className="space-y-2">
+                        //             <p className="leading-snug dark:text-gray-600">SpecialOffers :{room.SpecialOffers}</p>
+                        //             <a rel="noopener noreferrer" href="#" className="block">
+                        //                 <h3 className="text-[16px] font-semibold dark:text-violet-600">{room.RoomDescription.slice(0, 130)}...</h3>
+                        //             </a>
+                        //             <button type="button" className="px-8 py-3 font-semibold rounded bg-violet-500">Book now</button>
+                        //         </div>
+                        //     </div>
+                        // </div>
                     ))}
                 </div>
             </div>

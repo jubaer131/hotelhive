@@ -134,12 +134,25 @@ const FeaturedroomsDetails = ({ room }) => {
 
     };
 
-    const handlesubmission = e => {
-        const form = e.target.value
-        const RoomDescription = form.RoomDescription.value
-        const price = form.price.value
-        console.log(price, RoomDescription)
-    }
+    const handlesubmission = async (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
+
+        const RoomDescription = room.RoomDescription;
+        const price = room.PricePerNight;
+        const date = startDate;
+
+        const roomdata = { RoomDescription, price, date };
+
+        try {
+            const { data } = await axios.post('http://localhost:5000/myrooms-data', roomdata);
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+
+
 
 
     return (
@@ -174,6 +187,7 @@ const FeaturedroomsDetails = ({ room }) => {
                                         </label>
                                         <input
                                             defaultValue={room.RoomDescription}
+                                            // defaultValue={room.RoomDescription}
                                             id='RoomDescription'
                                             name='RoomDescription'
                                             type='text'
@@ -217,12 +231,12 @@ const FeaturedroomsDetails = ({ room }) => {
 
 
                                 </div>
-
+                                <button onClick={() => handleBooked(room._id, room.Status, 'booked')} className="px-4 p-2 mt-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-500">
+                                    Confirm Booking
+                                </button>
                             </form>
 
-                            <button onClick={() => handleBooked(room._id, room.Status, 'booked')} className="px-4 p-2 mt-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-500">
-                                Confirm Booking
-                            </button>
+
 
                             <button onClick={closeModal} className="absolute top-0 right-0 mt-2 mr-2 text-gray-500 cursor-pointer">
                                 <span className="sr-only">Close</span>
