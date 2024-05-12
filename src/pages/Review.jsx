@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../assets/Provider/AuthProvider";
-// import axios from "axios";
+import axios from "axios";
 
 const Review = () => {
     const { user } = useContext(AuthContext)
@@ -21,12 +21,12 @@ const Review = () => {
         const datareview = { username, email, timestamp, comment, rating }
         console.log(datareview)
 
-        // try {
-        //     const { data } = await axios.post('http://localhost:5000/alluser-reiew', datareview);
-        //     console.log(data);
-        // } catch (err) {
-        //     console.log(err);
-        // }
+        try {
+            const { data } = await axios.post('http://localhost:5000/userreview', datareview);
+            console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
 
 
     }
