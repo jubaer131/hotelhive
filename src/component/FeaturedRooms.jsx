@@ -5,7 +5,7 @@ import FeaturedroomsDetails from "./FeaturedroomsDetails";
 const FeaturedRooms = () => {
     const [rooms, setrooms] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/featuredrooms')
+        fetch('http://localhost:5000/Rooms')
             .then(res => res.json())
             .then(data => setrooms(data))
     }, [])
