@@ -64,10 +64,12 @@ const FeaturedroomsDetails = ({ room }) => {
 
         const RoomDescription = room.RoomDescription;
         const price = room.PricePerNight;
+        const _id = room._id
+        const Status = 'booked'
         const date = startDate;
         const email = user.email
         const name = user.displayName
-        const roomdata = { RoomDescription, price, date, email, name };
+        const roomdata = { RoomDescription, price, date, email, name, _id, Status };
 
         try {
             const { data } = await axios.post('http://localhost:5000/myrooms-data', roomdata);
@@ -126,7 +128,7 @@ const FeaturedroomsDetails = ({ room }) => {
                                             Email Address
                                         </label>
                                         <input
-                                            defaultValue={user.displayName}
+                                            defaultValue={user.email}
                                             id='emailAddress'
                                             type='email'
                                             name='email'

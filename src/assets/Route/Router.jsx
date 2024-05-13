@@ -10,6 +10,8 @@ import RoomsPage from "../../pages/RoomsPage";
 import RoomPageDetail from "../../pages/RoomPageDetail";
 import Review from "../../pages/Review";
 import Mybooking from "../../pages/Mybooking";
+import Updatedate from "../../pages/Updatedate";
+import PriveRout from "./PriveRout";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/rooms-page",
-                element: <RoomsPage></RoomsPage>,
+                element: <PriveRout><RoomsPage></RoomsPage></PriveRout>,
             },
             {
                 path: "/roompagedetail/:id",
@@ -45,7 +47,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-booking",
-                element: <Mybooking></Mybooking>,
+                element: <PriveRout> <Mybooking></Mybooking></PriveRout>,
+            },
+            {
+                path: "/updatedate",
+                element: <Updatedate></Updatedate>,
+
             },
 
         ],
