@@ -9,8 +9,8 @@ const UserreviewDetails = ({ item }) => {
                         <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                     </div>
                     <div>
-                        <h4 className="font-bold">Leroy Jenkins</h4>
-                        <span className="text-xs dark:text-gray-600">2 days ago</span>
+                        <h4 className="font-bold">{item.username}</h4>
+                        <span className="text-xs dark:text-gray-600">{item.timestamp}</span>
                     </div>
                 </div>
                 <div className="flex items-center space-x-2 dark:text-yellow-700">
@@ -21,7 +21,7 @@ const UserreviewDetails = ({ item }) => {
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
+                <p>{item.comment}</p>
                 <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
             </div>
         </div>

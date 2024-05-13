@@ -52,7 +52,7 @@ const Navbar = () => {
                                 <Link to='/rooms-page' className='justify-between'>Rooms page</Link>
                             </li>
                             <li>
-                                <div>My booking </div>
+                                <Link to="/my-booking">My booking </Link>
                             </li>
                             <li>
                                 <div>About Us</div>
