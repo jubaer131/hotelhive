@@ -24,7 +24,7 @@ const Review = () => {
         console.log(datareview)
 
         try {
-            const { data } = await axios.post('http://localhost:5000/userreview', datareview);
+            const { data } = await axios.post('https://hotelhive-server.vercel.app/userreview', datareview);
             console.log(data);
             navigate('/')
         } catch (err) {

@@ -5,7 +5,7 @@ import FeaturedroomsDetails from "./FeaturedroomsDetails";
 const FeaturedRooms = () => {
     const [rooms, setrooms] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/our-roomdataall')
+        fetch('https://hotelhive-server.vercel.app/our-roomdataall')
             .then(res => res.json())
             .then(data => setrooms(data))
     }, [])

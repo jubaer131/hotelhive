@@ -6,7 +6,7 @@ const Userreview = () => {
 
     const [review, setreview] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/userreviewpost')
+        fetch('https://hotelhive-server.vercel.app/userreviewpost')
             .then(res => res.json())
             .then(data => setreview(data))
 

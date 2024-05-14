@@ -40,7 +40,7 @@ const RoomPageDetail = () => {
         }
 
         // Perform booking logic
-        const { data } = await axios.patch(`http://localhost:5000/featured-rooms/${id}`, {
+        const { data } = await axios.patch(`https://hotelhive-server.vercel.app/featured-rooms/${id}`, {
             Status
         });
 
@@ -72,7 +72,7 @@ const RoomPageDetail = () => {
         const roomdata = { RoomDescription, price, date, email, name };
 
         try {
-            const { data } = await axios.post('http://localhost:5000/myrooms-data', roomdata);
+            const { data } = await axios.post('https://hotelhive-server.vercel.app/myrooms-data', roomdata);
             console.log(data);
         } catch (err) {
             console.log(err);

@@ -21,7 +21,7 @@ const Updatedate = () => {
         const newsport = { name, email, PricePerNight, date }
         console.log(newsport)
 
-        fetch(`http://localhost:5000/updatedate/${user.email}`, {
+        fetch(`https://hotelhive-server.vercel.app/updatedate/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

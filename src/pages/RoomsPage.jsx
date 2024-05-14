@@ -9,7 +9,7 @@ const RoomsPage = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/RoomsPage?filter=${filter}`)
+        fetch(`https://hotelhive-server.vercel.app/RoomsPage?filter=${filter}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -50,11 +50,13 @@ const RoomsPage = () => {
 
                         <Link to={`/roompagedetail/${room._id}`}>
 
-                            <div className="hero  shadow-2xl" style={{ backgroundImage: 'url(https://i.ibb.co/QrjvjQC/manzur-alam-jxz7-Fe1btc-unsplash.jpg)' }}>
+
+                            <div className="hero shadow-2xl" style={{ backgroundImage: `url(${room.Image})` }}>
+
                                 <div className=""></div>
                                 <div className="hero-content text-center text-neutral-content">
                                     <div className="max-w-md h-72">
-                                        <h1 className="mt-28 text-4xl font-bold">Bangladesh</h1>
+                                        <h1 className="mt-28 text-4xl font-bold">Hotel Hive</h1>
 
                                     </div>
                                 </div>

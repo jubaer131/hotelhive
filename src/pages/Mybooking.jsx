@@ -10,7 +10,7 @@ const Mybooking = () => {
     const [booking, setbooking] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookingroom/${user?.email}`)
+        fetch(`https://hotelhive-server.vercel.app/bookingroom/${user?.email}`)
             .then(res => res.json())
             .then(data => setbooking(data))
     }, [])
@@ -33,7 +33,7 @@ const Mybooking = () => {
                 if (result.isConfirmed) {
 
                     console.log('is working')
-                    const { data } = await axios.patch(`http://localhost:5000/booking-cancel/${id}`, {
+                    const { data } = await axios.patch(`https://hotelhive-server.vercel.app/booking-cancel/${id}`, {
                         Status
                     });
 

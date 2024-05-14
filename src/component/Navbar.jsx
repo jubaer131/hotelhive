@@ -7,11 +7,11 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     return (
-        <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
+        <div className='navbar  shadow-sm container px-4 mx-auto bg-[#b4c591] my-4 rounded-2xl'>
             <div className='flex-1'>
                 <div className='flex gap-2 items-center'>
                     <img className='w-auto h-7' src='' alt='' />
-                    <span className='font-bold'>HotelHive</span>
+                    <span className='font-bold text-2xl'>HotelHive</span>
                 </div>
             </div>
             <div className='flex-none'>

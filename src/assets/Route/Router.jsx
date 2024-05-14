@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: "/roompagedetail/:id",
                 element: <RoomPageDetail></RoomPageDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/roompagedetail/${params.id}`)
+                loader: ({ params }) => fetch(`https://hotelhive-server.vercel.app/roompagedetail/${params.id}`)
 
             },
             {

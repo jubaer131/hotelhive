@@ -38,7 +38,7 @@ const FeaturedroomsDetails = ({ room }) => {
         }
 
         // Perform booking logic
-        const { data } = await axios.patch(`http://localhost:5000/featured-rooms/${id}`, {
+        const { data } = await axios.patch(`https://hotelhive-server.vercel.app/featured-rooms/${id}`, {
             Status
         });
 
@@ -72,7 +72,7 @@ const FeaturedroomsDetails = ({ room }) => {
         const roomdata = { RoomDescription, price, date, email, name, _id, Status };
 
         try {
-            const { data } = await axios.post('http://localhost:5000/myrooms-data', roomdata);
+            const { data } = await axios.post('https://hotelhive-server.vercel.app/myrooms-data', roomdata);
             console.log(data);
         } catch (err) {
             console.log(err);
@@ -84,10 +84,10 @@ const FeaturedroomsDetails = ({ room }) => {
 
 
     return (
-        <div className=" shadow-md dark:bg-gray-50 dark:text-gray-800">
-            <div className="space-y-4">
+        <div className=" shadow-md dark:bg-gray-50 dark:text-gray-800 rounded-2xl">
+            <div className="space-y-4 p-4 rounded-2xl">
                 <div className="space-y-2">
-                    <img src="https://source.unsplash.com/random/480x360/?4" alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                    <img src={room.Image} alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
                 </div>
                 <div className="space-y-4">
 
