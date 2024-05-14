@@ -18,7 +18,7 @@ const Footer = () => {
                     </div>
                     <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                         <div className="space-y-3">
-                            <h3 className="tracking-wide uppercase dark:text-gray-900">Product</h3>
+                            <h3 className="tracking-wide uppercase dark:text-gray-900">For Quick access</h3>
                             <ul className="space-y-1">
                                 <li>
                                     <Link to="/login">Login</Link>
@@ -43,17 +43,15 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="space-y-3">
-                            <h3 className="uppercase dark:text-gray-900">Developers</h3>
+                            <h3 className="uppercase dark:text-gray-900">Private</h3>
                             <ul className="space-y-1">
                                 <li>
-                                    <a rel="noopener noreferrer" href="#">Public API</a>
+                                    <Link to="/my-booking" >My-booking</Link>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#">Documentation</a>
+                                    <Link to="/rooms-page">Rooms page</Link>
                                 </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#">Guides</a>
-                                </li>
+
                             </ul>
                         </div>
                         <div className="space-y-3">
@@ -78,7 +76,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="py-6 text-sm text-center dark:text-gray-600">© 1968 Company Co. All rights reserved.</div>
+                <div className="py-6 text-sm text-center dark:text-gray-600">Hotel Hive Group  Science 1998. All rights reserved.</div>
             </footer>
         </div>
     );

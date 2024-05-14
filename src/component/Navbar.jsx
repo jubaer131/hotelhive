@@ -7,7 +7,7 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     return (
-        <div className='navbar  shadow-sm container px-4 mx-auto bg-[#b4c591] my-4 rounded-2xl'>
+        <div className='navbar  shadow-sm container px-4 mx-auto bg-[#becca2] md:my-4 mb-2 rounded-2xl'>
             <div className='flex-1'>
                 <div className='flex gap-2 items-center'>
                     <img className='w-auto h-7' src='' alt='' />
@@ -17,12 +17,13 @@ const Navbar = () => {
             <div className='flex-none'>
                 <ul className='menu menu-horizontal px-1'>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link className="text-xl font-medium" to="/">Home</Link>
                     </li>
+
                     {
                         !user && (
                             <li>
-                                <Link to="/login">Login</Link>
+                                <Link className="text-xl font-medium" to="/login">Login</Link>
                             </li>
                         )
                     }
@@ -57,9 +58,7 @@ const Navbar = () => {
                             <li>
                                 <div>About Us</div>
                             </li>
-                            <li>
-                                <div>Contract Us</div>
-                            </li>
+
                             <li className='mt-2'>
                                 <button onClick={logOut} className='bg-gray-200 block text-center'>Logout</button>
                             </li>

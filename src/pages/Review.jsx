@@ -16,11 +16,12 @@ const Review = () => {
         console.log('is running')
         const form = e.target
         const username = user.displayName
+        const photo = user.photoURL
         const email = user.email
         const timestamp = startDate
         const comment = form.comment.value
         const rating = form.rating.value
-        const datareview = { username, email, timestamp, comment, rating }
+        const datareview = { username, email, timestamp, comment, rating, photo }
         console.log(datareview)
 
         try {

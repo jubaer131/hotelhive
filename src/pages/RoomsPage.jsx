@@ -34,9 +34,9 @@ const RoomsPage = () => {
                             className='border p-4 rounded-lg'
                         >
                             <option value=''>Filter By  price range</option>
-                            <option value='$50'>Price for Pernight $50</option>
-                            <option value='$20'>Price $20</option>
-                            <option value='$80'>Price $80</option>
+                            <option value='$50'>Price Per night : $50</option>
+                            <option value='$20'>Price per night : $20</option>
+                            <option value='$80'>Price per night : $80</option>
 
 
                         </select>

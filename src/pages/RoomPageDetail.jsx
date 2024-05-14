@@ -11,8 +11,8 @@ const RoomPageDetail = () => {
     const room = useLoaderData()
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
-    const [isBooked, setIsBooked] = useState(false); // State to track if room is booked
-    const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+    const [isBooked, setIsBooked] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -27,7 +27,7 @@ const RoomPageDetail = () => {
     const handleBooked = async (id, previousStatus, Status) => {
 
         console.log(id, previousStatus, Status)
-        // If room is already booked, show alert and return
+
         if (isBooked) {
             Swal.fire({
                 icon: 'info',
@@ -39,15 +39,15 @@ const RoomPageDetail = () => {
             return;
         }
 
-        // Perform booking logic
+
         const { data } = await axios.patch(`https://hotelhive-server.vercel.app/featured-rooms/${id}`, {
             Status
         });
 
-        // Update state to indicate room has been booked
+
         setIsBooked(true);
 
-        // Show success message
+
         Swal.fire({
             position: "top-end",
             icon: "success",
@@ -56,16 +56,17 @@ const RoomPageDetail = () => {
             timer: 1500
         });
 
-        // Close modal after booking
+
         closeModal();
 
     };
 
     const handlesubmission = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault();
 
         const RoomDescription = room.RoomDescription;
         const price = room.PricePerNight;
+
         const date = startDate;
         const email = user.email
         const name = user.displayName

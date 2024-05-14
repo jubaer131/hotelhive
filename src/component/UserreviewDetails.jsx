@@ -6,7 +6,7 @@ const UserreviewDetails = ({ item }) => {
             <div className="flex justify-between p-4">
                 <div className="flex space-x-4">
                     <div>
-                        <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                        <img referrerPolicy="'no-referrer" src={item.photo} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                     </div>
                     <div>
                         <h4 className="font-bold">{item.username}</h4>
@@ -21,8 +21,8 @@ const UserreviewDetails = ({ item }) => {
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                <p>{item.comment}</p>
-                <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
+                <p>{item.comment.slice(0, 280)}</p>
+
             </div>
         </div>
     );
