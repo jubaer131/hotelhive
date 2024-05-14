@@ -10,7 +10,14 @@ Currently, two official plugins are available:
 
 ## Website name : Hotel-Hive
 
-[Live Site](http://www.example.com)
+[Live Site here](http://www.example.com)
 
-#Description
-MyReactApp is a single-page web application built using React.js, Firebase,express mongodb and other technologies
+## Description
+MyReactApp is a single-page web application built using React.js, Firebase,express.js mongodb and other technologies
+
+## Featured
+
+- React.js: Utilize the power of React.js for building a dynamic and interactive user interface.
+- Firebase Integration: Seamlessly integrate Firebase for backend services including authentication, real-time database, and file storage. 
+- Routing: Implement client-side routing using React Router for smooth navigation within the application.
+
