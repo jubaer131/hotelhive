@@ -24,6 +24,7 @@ MyReactApp is a single-page web application built using React.js, Firebase,expre
 - Tailwind CSS for Styling Excellence
 - Dynamic User Interface with React
 
-  ## pakages
-  -React Helmet
-  -Map Library. pigeon-maps
+  
+ ## pakages
+  - React Helmet
+  - Map Library. pigeon-maps
