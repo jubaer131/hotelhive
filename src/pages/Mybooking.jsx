@@ -3,6 +3,7 @@ import { AuthContext } from "../assets/Provider/AuthProvider"
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
 import axios from "axios"
+import { Helmet } from "react-helmet"
 
 const Mybooking = () => {
 
@@ -52,6 +53,9 @@ const Mybooking = () => {
 
     return (
         <section className='container px-4 mx-auto pt-12'>
+            <Helmet>
+                <title>My-booking</title>
+            </Helmet>
             <div className='flex items-center gap-x-3'>
                 <h2 className='text-lg font-medium text-gray-800 '>My Booking</h2>
 

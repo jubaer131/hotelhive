@@ -6,6 +6,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from "../assets/Provider/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const RoomPageDetail = () => {
     const room = useLoaderData()
@@ -86,6 +87,9 @@ const RoomPageDetail = () => {
 
     return (
         <div className=" shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <Helmet>
+                <title>Room page details</title>
+            </Helmet>
             <div className="space-y-4">
                 <div className="space-y-2">
                     <img src="https://source.unsplash.com/random/480x360/?4" alt="" className="block object-cover object-center w-full rounded-md md:h-[500px] p-5 dark:bg-gray-500" />

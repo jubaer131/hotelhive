@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../assets/Provider/AuthProvider";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Review = () => {
     const { user } = useContext(AuthContext)
@@ -37,6 +38,9 @@ const Review = () => {
 
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
+            <Helmet>
+                <title>Review</title>
+            </Helmet>
             <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
                 <h2 className='text-lg font-semibold text-gray-700 capitalize '>
                     What is your opinion

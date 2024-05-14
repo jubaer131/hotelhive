@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../assets/Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet";
 
 const Updatedate = () => {
 
@@ -45,6 +46,9 @@ const Updatedate = () => {
 
     return (
         <div className="max-w-[600px] md:h-[500px] mx-auto md:mt-8 p-16">
+            <Helmet>
+                <title>Update date</title>
+            </Helmet>
             <h1 className="text-center text-3xl">Update your new date</h1>
             <form onSubmit={handleaddsport}>
                 <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
