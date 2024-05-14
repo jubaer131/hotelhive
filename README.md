@@ -20,4 +20,10 @@ MyReactApp is a single-page web application built using React.js, Firebase,expre
 - React.js: Utilize the power of React.js for building a dynamic and interactive user interface.
 - Firebase Integration: Seamlessly integrate Firebase for backend services including authentication, real-time database, and file storage. 
 - Routing: Implement client-side routing using React Router for smooth navigation within the application.
+- Responsive Design: Ensure a consistent user experience across various devices with responsive design techniques
+- Tailwind CSS for Styling Excellence
+- Dynamic User Interface with React
 
+  ## pakages
+  -React Helmet
+  -Map Library. pigeon-maps
