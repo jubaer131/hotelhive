@@ -48,6 +48,7 @@ const router = createBrowserRouter([
             {
                 path: "/my-booking",
                 element: <PriveRout> <Mybooking></Mybooking></PriveRout>,
+                loader: () => fetch('https://hotelhive-server.vercel.app/our-roomdataall')
             },
             {
                 path: "/updatedate",

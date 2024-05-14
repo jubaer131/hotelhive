@@ -1,21 +1,26 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../assets/Provider/AuthProvider"
-import { Link } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import Swal from 'sweetalert2'
 import axios from "axios"
 import { Helmet } from "react-helmet"
+import { TbPhotoCancel } from "react-icons/tb";
+import { MdUpdate } from "react-icons/md";
+import { MdReviews } from "react-icons/md";
 
 const Mybooking = () => {
 
+    const review = useLoaderData()
     const { user } = useContext(AuthContext)
     const [booking, setbooking] = useState([])
+
 
     useEffect(() => {
         fetch(`https://hotelhive-server.vercel.app/bookingroom/${user?.email}`)
             .then(res => res.json())
             .then(data => setbooking(data))
     }, [])
-    console.log(booking)
+    console.log(review)
 
     const handleBooked = async (id, previousStatus, Status) => {
         console.log(id, previousStatus, Status)
@@ -60,7 +65,7 @@ const Mybooking = () => {
                 <h2 className='text-lg font-medium text-gray-800 '>My Booking</h2>
 
                 <span className='px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full '>
-                    booking
+                    {booking.length}
                 </span>
             </div>
 
@@ -100,14 +105,14 @@ const Mybooking = () => {
                                             scope='col'
                                             className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                         >
-                                            Cancel booking
+                                            Cancel Booking
                                         </th>
 
                                         <th
                                             scope='col'
                                             className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'
                                         >
-                                            Update date
+                                            Update Date
                                         </th>
 
                                         <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'>
@@ -134,8 +139,8 @@ const Mybooking = () => {
                                                 <td className='px-4 py-4 text-sm whitespace-nowrap'>
                                                     <div className='flex items-center gap-x-2'>
 
-                                                        <button onClick={() => handleBooked(item._id, item.Status, 'available')} className={`text-sm font-normal btn ${item.Status === 'available' ? 'text-yellow-500 bg-yellow-100/60' : 'text-red-500 bg-red-100/60'}`}>
-                                                            booking cancle
+                                                        <button onClick={() => handleBooked(item._id, item.Status, 'available')} className={`text-sm font-normal btn ${item.Status !== 'available' ? 'text-yellow-500 bg-yellow-100/60' : 'text-red-500 bg-red-100/60 cursor-not-allowed '}`}>
+                                                            <TbPhotoCancel></TbPhotoCancel>
                                                         </button>
                                                     </div>
                                                 </td>
@@ -143,7 +148,7 @@ const Mybooking = () => {
                                                 <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                                                     <div className='inline-flex items-center px-3 py-1 rounded-full gap-x-2'>
                                                         <Link to={`/updatedate`}>
-                                                            <button className="btn">Update</button>
+                                                            <button className="btn"><MdUpdate></MdUpdate></button>
                                                         </Link>
 
                                                     </div>
@@ -152,7 +157,7 @@ const Mybooking = () => {
                                                 <td className='px-4 py-4 text-sm whitespace-nowrap'>
                                                     <div>
                                                         <Link to={`/review`}>
-                                                            <button className="btn">Review</button>
+                                                            <button className="btn"><MdReviews></MdReviews></button>
                                                         </Link>
                                                     </div>
 
@@ -167,7 +172,7 @@ const Mybooking = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
