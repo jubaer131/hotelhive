@@ -10,7 +10,9 @@ const RoomsPage = () => {
 
     useEffect(() => {
 
-        fetch(`https://hotelhive-server.vercel.app/RoomsPage?filter=${filter}`)
+        fetch(`https://hotelhive-server.vercel.app/RoomsPage?filter=${filter}`, {
+            credentials: 'include'
+        })
             .then(res => res.json())
             .then(data => {
                 console.log(data)

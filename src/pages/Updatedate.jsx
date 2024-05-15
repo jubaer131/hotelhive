@@ -4,10 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../assets/Provider/AuthProvider";
 import Swal from 'sweetalert2'
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 const Updatedate = () => {
 
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const [startDate, setStartDate] = useState(new Date());
 
@@ -41,6 +43,7 @@ const Updatedate = () => {
                     })
                 }
             })
+        navigate('/my-booking')
     }
 
 

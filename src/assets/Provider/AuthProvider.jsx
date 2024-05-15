@@ -11,6 +11,7 @@ import {
     updateProfile,
 } from 'firebase/auth'
 import { app } from '../Firebase.config'
+import axios from 'axios'
 
 
 export const AuthContext = createContext(null)
@@ -54,6 +55,16 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser)
             console.log('CurrentUser-->', currentUser)
             setLoading(false)
+            if (currentUser) {
+                const loggeduser = { email: currentUser.email };
+                axios.post('https://hotelhive-server.vercel.app/jwt', loggeduser, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log('token respons', res.data)
+                    })
+            }
+
         })
         return () => {
             return unsubscribe()

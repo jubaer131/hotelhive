@@ -1,18 +1,22 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../assets/Provider/AuthProvider"
-import { Link, useLoaderData } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
 import axios from "axios"
 import { Helmet } from "react-helmet"
 import { TbPhotoCancel } from "react-icons/tb";
 import { MdUpdate } from "react-icons/md";
 import { MdReviews } from "react-icons/md";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { toast } from "react-toastify"
 
 const Mybooking = () => {
 
-    const review = useLoaderData()
+
     const { user } = useContext(AuthContext)
     const [booking, setbooking] = useState([])
+    const [startDate, setStartDate] = useState(new Date());
 
 
     useEffect(() => {
@@ -20,7 +24,7 @@ const Mybooking = () => {
             .then(res => res.json())
             .then(data => setbooking(data))
     }, [])
-    console.log(review)
+
 
     const handleBooked = async (id, previousStatus, Status) => {
         console.log(id, previousStatus, Status)
@@ -53,6 +57,9 @@ const Mybooking = () => {
             });
         }
     }
+
+
+
 
 
 
@@ -148,16 +155,17 @@ const Mybooking = () => {
                                                 <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                                                     <div className='inline-flex items-center px-3 py-1 rounded-full gap-x-2'>
                                                         <Link to={`/updatedate`}>
-                                                            <button className="btn"><MdUpdate></MdUpdate></button>
+                                                            <button className="btn bg-violet-100"><MdUpdate></MdUpdate></button>
                                                         </Link>
 
                                                     </div>
+
                                                 </td>
 
                                                 <td className='px-4 py-4 text-sm whitespace-nowrap'>
                                                     <div>
                                                         <Link to={`/review`}>
-                                                            <button className="btn"><MdReviews></MdReviews></button>
+                                                            <button className="btn bg-green-50"><MdReviews></MdReviews></button>
                                                         </Link>
                                                     </div>
 
